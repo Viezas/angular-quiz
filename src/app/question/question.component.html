@@ -1,4 +1,8 @@
 <section class="mt-4">
+  <h3 class="m-4">
+    <a routerLink="/categories" class="underline text-sky-400">Catégorie</a> >
+    {{ category?.title }}
+  </h3>
   <div *ngIf="!show_score; else showScore">
     <div
       class="mx-40 mb-10 p-4 border-2 rounded-lg shadow-md"

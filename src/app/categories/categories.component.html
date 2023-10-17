@@ -25,9 +25,11 @@
     <p>Il n'y a pas de catégorie à afficher</p>
   </div>
   <div
-    class="p-4 border-2 rounded-lg shadow-md hover:cursor-pointer hover:bg-sky-200"
+    class="border-2 rounded-lg shadow-md hover:cursor-pointer hover:bg-sky-200"
     *ngFor="let category of categories; let index = index"
   >
-    <a routerLink="/categories/{{ category.id }}">{{ category.title }}</a>
+    <a routerLink="/categories/{{ category.id }}" class="p-4 block w-full">{{
+      category.title
+    }}</a>
   </div>
 </div>

@@ -37,6 +37,7 @@ export class QuestionComponent {
       if (Object.keys(category).length === 0) {
         this.router.navigate(['/categories']);
       }
+      this.category = Object.values(category)[0];
     });
 
     this.questionService
