@@ -1,0 +1,67 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "title": "Dans cette situation",
+      "answer": 2,
+      "video": null,
+      "image": "assets/img/question_1.jpg",
+      "options": [
+        "J'écrase la pédale de frein",
+        "Je cède le passage au piéton",
+        "J'appel la police pour conduite en état d’ivresse",
+        "Je passe au ralenti"
+      ],
+      "categoryId" : 1
+    },
+    {
+      "id": 2,
+      "title": "J'ai la priorités à la prochaine intersection",
+      "answer": 2,
+      "video": null,
+      "image": "assets/img/question_2.jpg",
+      "options": ["Oui", "Non", "Peut-être, donc je fonce"],
+      "categoryId" : 1
+    },
+    {
+      "id": 3,
+      "title": "Je ralentis à l'approche de ce dos d'âne",
+      "answer": 1,
+      "video": null,
+      "image": "assets/img/question_3.jpg",
+      "options": ["Oui", "Non", "???"],
+      "categoryId" : 1
+    },
+    {
+      "id": 4,
+      "title": "Je suis témoins de l'accident de cet automobiliste je dois",
+      "answer": 1,
+      "video": null,
+      "image": "assets/img/question_4.jpg",
+      "options": [
+        "Veiller sur les personnes, alerter les secours, sécuriser la scène",
+        "Sécuriser la scène, veiller sur les personnes, alerter les secours",
+        "Alerter les secours, sécuriser la scène, veiller sur les personnes",
+        "Je continue ma route"
+      ],
+      "categoryId" : 2
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "super.admin@test.com",
+      "password": "Password-1234"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "title": "Sécurité routière"
+    }, 
+    {
+      "id": 2,
+      "title" : "Signalisation"
+    }
+  ]
+}

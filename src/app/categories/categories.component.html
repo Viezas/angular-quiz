@@ -1,0 +1,33 @@
+<div class="py-10 px-20 grid grid-cols-4 gap-4">
+  <div class="col-span-full flex flex-row">
+    <input
+      type="text"
+      placeholder="Rechercher"
+      class="py-1 px-2 border border-black rounded-md"
+      [(ngModel)]="query"
+      name="query"
+      id="query"
+    />
+    <button
+      class="ml-4 bg-sky-400 text-white px-4 py-1 rounded-md hover:bg-sky-600"
+      (click)="filter()"
+    >
+      Filtrer
+    </button>
+    <button
+      class="ml-4 bg-red-400 text-white px-4 py-1 rounded-md hover:bg-red-600"
+      (click)="resetFilter()"
+    >
+      Réinitialiser le filtre
+    </button>
+  </div>
+  <div *ngIf="categories.length == 0">
+    <p>Il n'y a pas de catégorie à afficher</p>
+  </div>
+  <div
+    class="p-4 border-2 rounded-lg shadow-md hover:cursor-pointer hover:bg-sky-200"
+    *ngFor="let category of categories; let index = index"
+  >
+    <a routerLink="/categories/{{ category.id }}">{{ category.title }}</a>
+  </div>
+</div>

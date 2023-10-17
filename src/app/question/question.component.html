@@ -1,0 +1,52 @@
+<section class="mt-4">
+  <div *ngIf="!show_score; else showScore">
+    <div
+      class="mx-40 mb-10 p-4 border-2 rounded-lg shadow-md"
+      *ngFor="let question of questions; let index = index"
+    >
+      <h3 class="text-xl font-semibold mb-4">Question n°{{ index + 1 }}</h3>
+      <p class="mb-2">{{ question.title }} :</p>
+      <div class="flex items-center justify-center">
+        <img *ngIf="question.image" src="{{ question.image }}" class="w-1/2" />
+      </div>
+      <app-answers
+        [index]="index"
+        [options]="question.options"
+        (newAnswer)="updateAnswers(index, $event)"
+      ></app-answers>
+    </div>
+    <!-- Submit -->
+    <div class="px-10 mb-10 flex flex-col items-center justify-center">
+      <p class="text-sm">
+        En conclusion, cet examen blanc du code de la route a été conçu pour
+        évaluer vos connaissances et votre compréhension des règles et des
+        normes de conduite essentielles. La conduite responsable est cruciale
+        pour assurer la sécurité sur nos routes et contribuer à prévenir les
+        accidents. Nous espérons que cet examen a renforcé votre compréhension
+        des principes fondamentaux du code de la route. N'oubliez pas que la
+        sécurité routière est une responsabilité partagée par tous les
+        conducteurs, et il est essentiel de continuer à vous informer et à vous
+        former pour rester un conducteur responsable et respectueux des règles
+        de conduite. Continuez à pratiquer et à apprendre, car cela vous aidera
+        à prendre des décisions éclairées sur la route et à contribuer à un
+        environnement routier plus sûr pour tous. Bonne chance dans vos futurs
+        examens et sur la route.
+      </p>
+      <button
+        class="mt-10 py-2 px-4 rounded-lg bg-green-600 text-white"
+        (click)="submit()"
+      >
+        Terminer le quiz
+      </button>
+    </div>
+  </div>
+
+  <ng-template #showScore>
+    <app-score
+      [score]="score"
+      [email]="email"
+      [questionLength]="questions.length"
+      (retryEmit)="retry()"
+    ></app-score>
+  </ng-template>
+</section>

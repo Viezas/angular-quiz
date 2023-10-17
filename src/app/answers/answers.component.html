@@ -1,0 +1,15 @@
+<div class="grid grid-cols-2 gap-y-4 mt-4">
+  <label
+    *ngFor="let option of options; let key = index"
+    for="question_{{ index }}_{{ key }}"
+    class="col"
+  >
+    <input
+      type="radio"
+      name="question_{{ index }}"
+      id="question_{{ index }}_{{ key }}"
+      (click)="updateAnswers(index, key)"
+    />
+    {{ option }}
+  </label>
+</div>
